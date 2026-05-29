@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onboarding ONESecure — Alta Defensivos</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="onboarding.css">
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <img src="assets/logo/onesecure-horizontal.png" alt="ONESecure — Workspace Security Platform">
+      <div class="sidebar__client">
+        <span class="eyebrow">Cliente</span>
+        <img class="sidebar__clientlogo" src="assets/logo/alta-defensivos.png" alt="Alta Defensivos">
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidebar__foot">
+      <span>Onboarding</span>
+      <span>Março 2026</span>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb" id="crumb"></div>
+      <div class="topbar__pill">Jornada assistida</div>
+    </div>
+    <div class="scroll" id="scroll"></div>
+    <div class="footer">
+      <div class="footer__count" id="count"></div>
+      <div class="footer__nav">
+        <button class="btn btn--ghost" id="prev">Anterior</button>
+        <button class="btn btn--primary" id="next">Próximo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect width="100" height="100" fill="#0132A5"/>
+    <path d="M50 28l14 5v12c0 11-6 18-14 21-8-3-14-10-14-21V33l14-5z" fill="none" stroke="#BDFCE3" stroke-width="3"/>
+    <path d="M44 49l5 5 9-10" fill="none" stroke="#BDFCE3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</template>
+
+<script src="onboarding-data.js"></script>
+<script src="onboarding-app.js"></script>
+</body>
+</html>

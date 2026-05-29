@@ -1,0 +1,263 @@
+/* ONESecure — Workspace Security Platform
+ * Design tokens: colors, type, spacing, shadows, radii.
+ * Source of truth, mirrored from the Figma brand book (March 2026).
+ * All copy in this brand is Brazilian Portuguese.
+ */
+
+/* ---------- Webfonts ---------- */
+@font-face {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/Lexend-VariableFont_wght.ttf") format("truetype-variations"),
+       url("fonts/Lexend-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  /* ============================================================
+   * PRIMARY PALETTE — "Cores da marca"
+   * Royal blue + deep indigo carry the institutional voice:
+   * security, authority, clarity. Use these in 95% of cases.
+   * ============================================================ */
+  --os-primary:           #0132A5;  /* Cor Primária       — flagship royal blue */
+  --os-primary-dark:      #211941;  /* Cor Primária Dark  — deep indigo, backdrops */
+  --os-primary-bright:    #3280EF;  /* Cor Primária       — brighter highlight blue */
+
+  --os-blue-900:          #002A8C;  /* Apoio dark    — pressed states, depths */
+  --os-blue-600:          #2F6DFF;  /* Apoio mid     — links, focus */
+  --os-blue-300:          #A9C3FF;  /* Apoio light   — chips, dividers on blue */
+  --os-blue-100:          #EAF0FF;  /* Apoio surface — light cards */
+  --os-blue-050:          #E6EDFF;  /* Page bg light — the default light surface */
+
+  /* ============================================================
+   * SUPPORT PALETTE — "Cores de apoio"
+   * Reserved for the EXPERIENTIAL line only (community, events,
+   * Suri). Brings energy without breaking institutional core.
+   * Never combine more than one support color in a single layout.
+   * ============================================================ */
+  --os-mint:              #BDFCE3;  /* Mint    — confirmation, soft accents */
+  --os-violet:            #934DEC;  /* Violet  — community / Suri persona */
+  --os-yellow:            #EEF274;  /* Yellow  — events, highlights */
+  --os-yellow-warm:       #FFEF4F;  /* Warm yellow — alt highlight (Linha Experiencial cards) */
+  --os-violet-deep:       #5540A7;  /* Violet deep — radial gradient over dark */
+
+  /* ============================================================
+   * NEUTRALS
+   * ============================================================ */
+  --os-ink:               #000000;
+  --os-ink-soft:          #020202;
+  --os-white:             #FFFFFF;
+  --os-neutral-200:       #D9D9D9;
+
+  /* ============================================================
+   * SEMANTIC ALIASES
+   * ============================================================ */
+  --os-fg:                var(--os-ink);
+  --os-fg-on-dark:        var(--os-white);
+  --os-fg-muted:          rgba(0, 0, 0, 0.72);
+  --os-fg-on-dark-muted:  rgba(255, 255, 255, 0.72);
+
+  --os-bg:                var(--os-blue-050);          /* default light page */
+  --os-bg-dark:           var(--os-primary);           /* default dark page  */
+  --os-bg-ink:            var(--os-primary-dark);      /* darkest backdrop   */
+
+  --os-surface:           rgba(255, 255, 255, 0.40);   /* glass card on blue */
+  --os-surface-blue:      rgba(50, 128, 239, 0.10);    /* tinted card        */
+  --os-surface-blue-20:   rgba(50, 128, 239, 0.20);    /* tinted card stronger */
+  --os-surface-pill:      rgba(1, 50, 165, 0.10);      /* badge/tag bg       */
+
+  --os-stroke:            rgba(103, 148, 254, 0.20);   /* "rain" line color  */
+  --os-divider:           rgba(33, 25, 65, 0.10);
+
+  --os-accent:            var(--os-primary-bright);
+  --os-link:              var(--os-blue-600);
+
+  /* ============================================================
+   * TYPE
+   * Lexend exclusively. Three weights in use: 300 / 400 / 700.
+   * (METADATA records 1 stray League Gothic + a handful of
+   * Inter Bold/Regular — treat those as legacy; do not introduce.)
+   * ============================================================ */
+  --os-font:              "Lexend", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --os-font-display:      "Lexend", system-ui, sans-serif;
+
+  --os-weight-light:      300;
+  --os-weight-regular:    400;
+  --os-weight-medium:     500;
+  --os-weight-bold:       700;
+
+  /* Type ramp — Figma is built at 1920px artboard.
+   * Sizes here are the "design" sizes; scale down ~0.6 for UI. */
+  --os-display-1:         96px;  /* Cover hero          — Bold,  lh 1.2 */
+  --os-display-2:         80px;  /* Section intro       — Bold,  lh 1.2 */
+  --os-h1:                64px;  /* Page title          — Bold,  lh 1.2 */
+  --os-h2:                48px;  /* Block headline      — Bold,  lh 1.4 */
+  --os-h3:                38px;  /* URL / brand mark    — Bold,  lh 1.3 */
+  --os-h4:                32px;  /* Card title          — Bold,  lh 1.5 */
+  --os-h5:                28px;  /* Inline title        — 400,   lh 1.5 */
+  --os-body-lg:           32px;  /* Body — slides       — 400,   lh 1.5 */
+  --os-body:              30px;  /* Body — paragraph    — 300,   lh 1.5 */
+  --os-body-sm:           20px;  /* Tag / chip          — 400,   lh 1.5 */
+  --os-caption:           16px;  /* Caption / hex label — 400,   lh 1.5 */
+
+  --os-lh-tight:          1.2;
+  --os-lh-snug:           1.3;
+  --os-lh-normal:         1.4;
+  --os-lh-relaxed:        1.5;
+
+  --os-track-tag:         0.08em;  /* Uppercase tags slightly tracked */
+
+  /* ============================================================
+   * SHAPE — radii
+   * Three sizes in active use. Pills are full-rounded.
+   * ============================================================ */
+  --os-r-pill:            999px;
+  --os-r-card:            32px;   /* Default card / hero block */
+  --os-r-button:          16px;   /* Buttons and badges        */
+  --os-r-input:           12px;
+  --os-r-sm:              8px;
+
+  /* ============================================================
+   * ELEVATION — shadows
+   * Only one ambient shadow recurs across the system.
+   * ============================================================ */
+  --os-shadow-pill:       0 4px 8px rgba(0, 0, 0, 0.20);
+  --os-shadow-card:       0 8px 24px rgba(33, 25, 65, 0.12);
+  --os-shadow-deep:       0 16px 48px rgba(33, 25, 65, 0.20);
+
+  /* ============================================================
+   * SPACING — 8pt grid
+   * ============================================================ */
+  --os-s-1:               4px;
+  --os-s-2:               8px;
+  --os-s-3:               12px;
+  --os-s-4:               16px;
+  --os-s-5:               24px;
+  --os-s-6:               32px;
+  --os-s-7:               48px;
+  --os-s-8:               64px;
+  --os-s-9:               96px;
+}
+
+/* ---------- Base typography & semantic tags ---------- */
+html { color-scheme: light; }
+
+body {
+  font-family: var(--os-font);
+  font-weight: var(--os-weight-regular);
+  color: var(--os-fg);
+  background: var(--os-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .os-h1 {
+  font-family: var(--os-font-display);
+  font-weight: var(--os-weight-bold);
+  font-size: var(--os-h1);
+  line-height: var(--os-lh-tight);
+  letter-spacing: -0.01em;
+  color: var(--os-primary-dark);
+  margin: 0;
+}
+
+h2, .os-h2 {
+  font-family: var(--os-font-display);
+  font-weight: var(--os-weight-bold);
+  font-size: var(--os-h2);
+  line-height: var(--os-lh-normal);
+  color: var(--os-fg);
+  margin: 0;
+}
+
+h3, .os-h3 {
+  font-family: var(--os-font-display);
+  font-weight: var(--os-weight-bold);
+  font-size: var(--os-h3);
+  line-height: var(--os-lh-snug);
+  color: var(--os-fg);
+  margin: 0;
+}
+
+h4, .os-h4 {
+  font-family: var(--os-font);
+  font-weight: var(--os-weight-bold);
+  font-size: var(--os-h4);
+  line-height: var(--os-lh-relaxed);
+  color: var(--os-primary-dark);
+  margin: 0;
+}
+
+p, .os-body {
+  font-family: var(--os-font);
+  font-weight: var(--os-weight-light);
+  font-size: var(--os-body);
+  line-height: var(--os-lh-relaxed);
+  color: var(--os-fg);
+  margin: 0;
+}
+
+.os-body-regular {
+  font-weight: var(--os-weight-regular);
+  font-size: var(--os-body-lg);
+  line-height: var(--os-lh-relaxed);
+}
+
+small, .os-caption {
+  font-size: var(--os-caption);
+  line-height: var(--os-lh-relaxed);
+  color: var(--os-fg);
+}
+
+.os-tag,
+.os-cta {
+  font-family: var(--os-font);
+  font-weight: var(--os-weight-regular);
+  font-size: var(--os-body-sm);
+  line-height: var(--os-lh-relaxed);
+  letter-spacing: var(--os-track-tag);
+  text-transform: uppercase;
+}
+
+/* ---------- Pill badge — used in headers, dates, page chips ---------- */
+.os-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--os-s-3);
+  padding: 9px 24px;
+  border-radius: var(--os-r-button);
+  background: var(--os-surface-pill);
+  box-shadow: var(--os-shadow-pill);
+  color: var(--os-primary);
+  font-family: var(--os-font);
+  font-size: var(--os-body-sm);
+  line-height: var(--os-lh-relaxed);
+  letter-spacing: var(--os-track-tag);
+  text-transform: uppercase;
+}
+
+.os-pill--on-dark { color: var(--os-white); }
+
+/* ---------- Primary CTA ---------- */
+.os-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: var(--os-r-button);
+  background: var(--os-primary);
+  color: var(--os-white);
+  font-family: var(--os-font);
+  font-weight: var(--os-weight-regular);
+  font-size: var(--os-body-sm);
+  line-height: var(--os-lh-relaxed);
+  letter-spacing: var(--os-track-tag);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 160ms ease, transform 120ms ease;
+}
+.os-btn:hover  { background: var(--os-blue-900); }
+.os-btn:active { transform: translateY(1px); }
